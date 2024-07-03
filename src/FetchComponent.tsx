@@ -1,4 +1,4 @@
-import { useOidcFetch } from "@axa-fr/react-oidc";
+import { useOidc, useOidcFetch } from "@axa-fr/react-oidc";
 import { FC, useEffect, useState } from "react";
 
 export const FetchComponent: FC = () => {
@@ -7,10 +7,12 @@ export const FetchComponent: FC = () => {
 
   const { fetch: oidcFetch } = useOidcFetch();
 
+  const { isAuthenticated } = useOidc();
+
   useEffect(() => {
     const fetchUserInfoAsync = async () => {
       // const res = await oidcFetch("http://localhost:5000/api/articles");
-      const res = await oidcFetch("https://rickandmortyapi.com/graphql");
+      const res = await oidcFetch("https://rickandmortyapi.com/api/character");
       if (res.status != 200) {
         return null;
       }
@@ -27,6 +29,10 @@ export const FetchComponent: FC = () => {
       isMounted = false;
     };
   }, []);
+
+  if (!isAuthenticated) {
+    return null;
+  }
 
   if (isLoading) {
     return <div>Loading</div>;
