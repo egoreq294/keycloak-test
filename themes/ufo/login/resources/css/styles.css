@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+.pf-c-button {
+    --pf-c-button--m-primary--BackgroundColor: #23C779;
+    --pf-c-button--m-primary--hover--BackgroundColor: #1FB26C;
+    --pf-c-button--m-primary--focus--BackgroundColor: #1CA061;
+    --pf-c-button--m-primary--active--BackgroundColor: #1CA061;
+}
+
+.login-pf body {
+    background: #fff url(../img/keycloak-bg.png) 10% 0 / cover no-repeat;    
+}
+
+.login-pf body::before {
+   content: "";
+   display: block;
+   position: absolute;
+   background: rgba(249,249,249, 0.3);
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   z-index: -1;
+}
+
+.login-pf-page-header {
+    display: none;
+}
+
+#kc-page-title {
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: -0.01em;
+}
+
+.pf-c-form__label{
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: normal;
+}
+
+.card-pf {
+    width: 490px !important;
+    padding: 32px !important;
+    border: 0;
+    border-radius: 6px;
+}
+
+.login-pf-page {
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#kc-login {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+    border-radius: 6px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: normal;
+}
+
+#password + button {
+    display: none;
+}
+
+.pf-c-form-control {
+    border-radius: 6px;
+    border: 1px solid #D7DBE4;
+}
+
+.pf-c-form-control:hover:not(:disabled) {   
+    border: 1px solid #0E71EB;
+}
+
+.pf-c-form-control[aria-invalid=true] {
+    background-image: unset;
+    background-position: unset;
+    background-size: unset;
+    border: 1px solid #DB1042;
+}
+
